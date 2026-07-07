@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🧊 Iceberg · The Final Form</title>
+    <title>🧊 Iceberg · Clickable Apps</title>
     <style>
         /* ─── Reset & base ─── */
         * {
@@ -189,7 +189,7 @@
             z-index: 1;
         }
 
-        /* ─── Individual app card ─── */
+        /* ─── Individual app card (clickable link) ─── */
         .app {
             display: flex;
             flex-direction: column;
@@ -213,6 +213,7 @@
             will-change: transform;
             transform-origin: center center;
             text-align: center;
+            position: relative;
         }
 
         .app:hover {
@@ -220,6 +221,21 @@
             background: rgba(255, 255, 255, 0.14);
             border-color: rgba(255, 255, 255, 0.18);
             transform: translateY(-4px);
+        }
+
+        /* ─── External link indicator ─── */
+        .app .link-icon {
+            position: absolute;
+            top: 0.6rem;
+            right: 0.8rem;
+            font-size: 0.6rem;
+            opacity: 0.25;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .app:hover .link-icon {
+            opacity: 0.7;
         }
 
         .app .icon {
@@ -260,6 +276,7 @@
         .app-etc:hover {
             transform: none !important;
             background: rgba(255, 255, 255, 0.07) !important;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25) !important;
         }
         .app-etc .icon {
             font-size: 2rem;
@@ -269,6 +286,9 @@
             font-weight: 400;
             font-style: italic;
             opacity: 0.5;
+        }
+        .app-etc .link-icon {
+            display: none;
         }
 
         /* ─── Layer color themes ─── */
@@ -646,6 +666,11 @@
             .orb {
                 opacity: 0;
             }
+            .app .link-icon {
+                font-size: 0.45rem;
+                top: 0.3rem;
+                right: 0.4rem;
+            }
         }
 
         /* ─── Scrollbar ─── */
@@ -763,23 +788,120 @@
                     <span class="depth-tag">0–5%</span>
                 </div>
                 <div class="apps">
-                    <a class="app" href="https://www.youtubekids.com/" target="_blank" rel="noopener noreferrer" title="YouTube Kids"><span class="icon">🧸</span><span class="name">YouTube Kids</span><span class="sub">video</span></a>
-                    <a class="app" href="https://pbskids.org/" target="_blank" rel="noopener noreferrer" title="PBS Kids"><span class="icon">🐾</span><span class="name">PBS Kids</span><span class="sub">games</span></a>
-                    <a class="app" href="https://www.nickjr.com/" target="_blank" rel="noopener noreferrer" title="Nick Jr."><span class="icon">🌟</span><span class="name">Nick Jr.</span><span class="sub">games</span></a>
-                    <a class="app" href="https://www.disneyplus.com/" target="_blank" rel="noopener noreferrer" title="Disney+"><span class="icon">🏰</span><span class="name">Disney+</span><span class="sub">video</span></a>
-                    <a class="app" href="https://www.lego.com/" target="_blank" rel="noopener noreferrer" title="LEGO"><span class="icon">🧱</span><span class="name">LEGO</span><span class="sub">games</span></a>
-                    <a class="app" href="https://kids.nationalgeographic.com/" target="_blank" rel="noopener noreferrer" title="Nat Geo Kids"><span class="icon">🌍</span><span class="name">Nat Geo Kids</span><span class="sub">edu</span></a>
-                    <a class="app" href="https://www.kiddle.co/" target="_blank" rel="noopener noreferrer" title="Kiddle"><span class="icon">🔍</span><span class="name">Kiddle</span><span class="sub">search</span></a>
-                    <a class="app" href="https://www.coolmathgames.com/" target="_blank" rel="noopener noreferrer" title="Cool Math Games"><span class="icon">🧮</span><span class="name">Cool Math</span><span class="sub">games</span></a>
-                    <a class="app" href="https://scratch.mit.edu/" target="_blank" rel="noopener noreferrer" title="Scratch"><span class="icon">🐱</span><span class="name">Scratch</span><span class="sub">code</span></a>
-                    <a class="app" href="https://www.duolingo.com/" target="_blank" rel="noopener noreferrer" title="Duolingo"><span class="icon">🦉</span><span class="name">Duolingo Kids</span><span class="sub">edu</span></a>
-                    <a class="app" href="https://www.starfall.com/" target="_blank" rel="noopener noreferrer" title="Starfall"><span class="icon">⭐</span><span class="name">Starfall</span><span class="sub">edu</span></a>
-                    <a class="app" href="https://www.khanacademy.org/kids" target="_blank" rel="noopener noreferrer" title="Khan Academy Kids"><span class="icon">📚</span><span class="name">Khan Academy Kids</span><span class="sub">edu</span></a>
-                    <a class="app" href="https://www.tinkercad.com/" target="_blank" rel="noopener noreferrer" title="Tinkercad"><span class="icon">🛠️</span><span class="name">Tinkercad</span><span class="sub">design</span></a>
-                    <a class="app" href="https://www.pokemon.com/us/" target="_blank" rel="noopener noreferrer" title="Pokémon"><span class="icon">⚡</span><span class="name">Pokémon</span><span class="sub">games</span></a>
-                    <a class="app" href="https://education.minecraft.net/" target="_blank" rel="noopener noreferrer" title="Minecraft Education"><span class="icon">⛏️</span><span class="name">Minecraft Edu</span><span class="sub">edu</span></a>
-                    <a class="app" href="https://www.typingclub.com/" target="_blank" rel="noopener noreferrer" title="TypingClub"><span class="icon">⌨️</span><span class="name">TypingClub</span><span class="sub">edu</span></a>
-                    <a class="app" href="https://www.brainpop.com/" target="_blank" rel="noopener noreferrer" title="BrainPOP"><span class="icon">🧠</span><span class="name">BrainPOP</span><span class="sub">edu</span></a>
+                    <a class="app" href="https://www.youtubekids.com/" target="_blank" rel="noopener noreferrer" title="YouTube Kids">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🧸</span>
+                        <span class="name">YouTube Kids</span>
+                        <span class="sub">video</span>
+                    </a>
+                    <a class="app" href="https://pbskids.org/" target="_blank" rel="noopener noreferrer" title="PBS Kids">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🐾</span>
+                        <span class="name">PBS Kids</span>
+                        <span class="sub">games</span>
+                    </a>
+                    <a class="app" href="https://www.nickjr.com/" target="_blank" rel="noopener noreferrer" title="Nick Jr.">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🌟</span>
+                        <span class="name">Nick Jr.</span>
+                        <span class="sub">games</span>
+                    </a>
+                    <a class="app" href="https://www.disneyplus.com/" target="_blank" rel="noopener noreferrer" title="Disney+">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🏰</span>
+                        <span class="name">Disney+</span>
+                        <span class="sub">video</span>
+                    </a>
+                    <a class="app" href="https://www.lego.com/" target="_blank" rel="noopener noreferrer" title="LEGO">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🧱</span>
+                        <span class="name">LEGO</span>
+                        <span class="sub">games</span>
+                    </a>
+                    <a class="app" href="https://kids.nationalgeographic.com/" target="_blank" rel="noopener noreferrer" title="Nat Geo Kids">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🌍</span>
+                        <span class="name">Nat Geo Kids</span>
+                        <span class="sub">edu</span>
+                    </a>
+                    <a class="app" href="https://www.kiddle.co/" target="_blank" rel="noopener noreferrer" title="Kiddle">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔍</span>
+                        <span class="name">Kiddle</span>
+                        <span class="sub">search</span>
+                    </a>
+                    <a class="app" href="https://www.coolmathgames.com/" target="_blank" rel="noopener noreferrer" title="Cool Math Games">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🧮</span>
+                        <span class="name">Cool Math</span>
+                        <span class="sub">games</span>
+                    </a>
+                    <a class="app" href="https://scratch.mit.edu/" target="_blank" rel="noopener noreferrer" title="Scratch">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🐱</span>
+                        <span class="name">Scratch</span>
+                        <span class="sub">code</span>
+                    </a>
+                    <a class="app" href="https://www.duolingo.com/" target="_blank" rel="noopener noreferrer" title="Duolingo">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🦉</span>
+                        <span class="name">Duolingo Kids</span>
+                        <span class="sub">edu</span>
+                    </a>
+                    <a class="app" href="https://www.starfall.com/" target="_blank" rel="noopener noreferrer" title="Starfall">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">⭐</span>
+                        <span class="name">Starfall</span>
+                        <span class="sub">edu</span>
+                    </a>
+                    <a class="app" href="https://www.khanacademy.org/kids" target="_blank" rel="noopener noreferrer" title="Khan Academy Kids">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📚</span>
+                        <span class="name">Khan Academy Kids</span>
+                        <span class="sub">edu</span>
+                    </a>
+                    <a class="app" href="https://www.tinkercad.com/" target="_blank" rel="noopener noreferrer" title="Tinkercad">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🛠️</span>
+                        <span class="name">Tinkercad</span>
+                        <span class="sub">design</span>
+                    </a>
+                    <a class="app" href="https://www.pokemon.com/us/" target="_blank" rel="noopener noreferrer" title="Pokémon">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">⚡</span>
+                        <span class="name">Pokémon</span>
+                        <span class="sub">games</span>
+                    </a>
+                    <a class="app" href="https://education.minecraft.net/" target="_blank" rel="noopener noreferrer" title="Minecraft Education">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">⛏️</span>
+                        <span class="name">Minecraft Edu</span>
+                        <span class="sub">edu</span>
+                    </a>
+                    <a class="app" href="https://www.typingclub.com/" target="_blank" rel="noopener noreferrer" title="TypingClub">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">⌨️</span>
+                        <span class="name">TypingClub</span>
+                        <span class="sub">edu</span>
+                    </a>
+                    <a class="app" href="https://www.brainpop.com/" target="_blank" rel="noopener noreferrer" title="BrainPOP">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🧠</span>
+                        <span class="name">BrainPOP</span>
+                        <span class="sub">edu</span>
+                    </a>
+                    <a class="app" href="https://www.abcya.com/" target="_blank" rel="noopener noreferrer" title="ABCya">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🎮</span>
+                        <span class="name">ABCya</span>
+                        <span class="sub">games</span>
+                    </a>
+                    <a class="app" href="https://www.funbrain.com/" target="_blank" rel="noopener noreferrer" title="Funbrain">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🧩</span>
+                        <span class="name">Funbrain</span>
+                        <span class="sub">games</span>
+                    </a>
                 </div>
             </div>
             <div class="depth-badge">⬆ kid</div>
@@ -797,31 +919,174 @@
                     <span class="depth-tag">5–25%</span>
                 </div>
                 <div class="apps">
-                    <a class="app" href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><span class="icon">📘</span><span class="name">Facebook</span><span class="sub">social</span></a>
-                    <a class="app" href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram"><span class="icon">📸</span><span class="name">Instagram</span><span class="sub">social</span></a>
-                    <a class="app" href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter / X"><span class="icon">🐦</span><span class="name">Twitter / X</span><span class="sub">social</span></a>
-                    <a class="app" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn"><span class="icon">💼</span><span class="name">LinkedIn</span><span class="sub">social</span></a>
-                    <a class="app" href="https://tiktok.com" target="_blank" rel="noopener noreferrer" title="TikTok"><span class="icon">🎵</span><span class="name">TikTok</span><span class="sub">social</span></a>
-                    <a class="app" href="https://snapchat.com" target="_blank" rel="noopener noreferrer" title="Snapchat"><span class="icon">👻</span><span class="name">Snapchat</span><span class="sub">social</span></a>
-                    <a class="app" href="https://reddit.com" target="_blank" rel="noopener noreferrer" title="Reddit"><span class="icon">🤖</span><span class="name">Reddit</span><span class="sub">social</span></a>
-                    <a class="app" href="https://pinterest.com" target="_blank" rel="noopener noreferrer" title="Pinterest"><span class="icon">📌</span><span class="name">Pinterest</span><span class="sub">social</span></a>
-                    <a class="app" href="https://tumblr.com" target="_blank" rel="noopener noreferrer" title="Tumblr"><span class="icon">💬</span><span class="name">Tumblr</span><span class="sub">social</span></a>
-                    <a class="app" href="https://youtube.com" target="_blank" rel="noopener noreferrer" title="YouTube"><span class="icon">▶️</span><span class="name">YouTube</span><span class="sub">video</span></a>
-                    <a class="app" href="https://netflix.com" target="_blank" rel="noopener noreferrer" title="Netflix"><span class="icon">🎬</span><span class="name">Netflix</span><span class="sub">video</span></a>
-                    <a class="app" href="https://twitch.tv" target="_blank" rel="noopener noreferrer" title="Twitch"><span class="icon">📺</span><span class="name">Twitch</span><span class="sub">video</span></a>
-                    <a class="app" href="https://vimeo.com" target="_blank" rel="noopener noreferrer" title="Vimeo"><span class="icon">🎥</span><span class="name">Vimeo</span><span class="sub">video</span></a>
-                    <a class="app" href="https://spotify.com" target="_blank" rel="noopener noreferrer" title="Spotify"><span class="icon">🎶</span><span class="name">Spotify</span><span class="sub">audio</span></a>
-                    <a class="app" href="https://gmail.com" target="_blank" rel="noopener noreferrer" title="Gmail"><span class="icon">📧</span><span class="name">Gmail</span><span class="sub">email</span></a>
-                    <a class="app" href="https://outlook.com" target="_blank" rel="noopener noreferrer" title="Outlook"><span class="icon">📨</span><span class="name">Outlook</span><span class="sub">email</span></a>
-                    <a class="app" href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" title="WhatsApp"><span class="icon">💬</span><span class="name">WhatsApp</span><span class="sub">chat</span></a>
-                    <a class="app" href="https://telegram.org" target="_blank" rel="noopener noreferrer" title="Telegram"><span class="icon">✈️</span><span class="name">Telegram</span><span class="sub">chat</span></a>
-                    <a class="app" href="https://amazon.com" target="_blank" rel="noopener noreferrer" title="Amazon"><span class="icon">🛒</span><span class="name">Amazon</span><span class="sub">shop</span></a>
-                    <a class="app" href="https://ebay.com" target="_blank" rel="noopener noreferrer" title="eBay"><span class="icon">📦</span><span class="name">eBay</span><span class="sub">shop</span></a>
-                    <a class="app" href="https://flickr.com" target="_blank" rel="noopener noreferrer" title="Flickr"><span class="icon">📷</span><span class="name">Flickr</span><span class="sub">social</span></a>
-                    <a class="app" href="https://quora.com" target="_blank" rel="noopener noreferrer" title="Quora"><span class="icon">❓</span><span class="name">Quora</span><span class="sub">social</span></a>
-                    <a class="app" href="https://google.com" target="_blank" rel="noopener noreferrer" title="Google"><span class="icon">🔍</span><span class="name">Google</span><span class="sub">search</span></a>
-                    <a class="app" href="https://bing.com" target="_blank" rel="noopener noreferrer" title="Bing"><span class="icon">🔎</span><span class="name">Bing</span><span class="sub">search</span></a>
-                    <a class="app" href="https://duckduckgo.com" target="_blank" rel="noopener noreferrer" title="DuckDuckGo"><span class="icon">🦆</span><span class="name">DuckDuckGo</span><span class="sub">search</span></a>
+                    <a class="app" href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📘</span>
+                        <span class="name">Facebook</span>
+                        <span class="sub">social</span>
+                    </a>
+                    <a class="app" href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📸</span>
+                        <span class="name">Instagram</span>
+                        <span class="sub">social</span>
+                    </a>
+                    <a class="app" href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter / X">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🐦</span>
+                        <span class="name">Twitter / X</span>
+                        <span class="sub">social</span>
+                    </a>
+                    <a class="app" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">💼</span>
+                        <span class="name">LinkedIn</span>
+                        <span class="sub">social</span>
+                    </a>
+                    <a class="app" href="https://tiktok.com" target="_blank" rel="noopener noreferrer" title="TikTok">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🎵</span>
+                        <span class="name">TikTok</span>
+                        <span class="sub">social</span>
+                    </a>
+                    <a class="app" href="https://snapchat.com" target="_blank" rel="noopener noreferrer" title="Snapchat">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">👻</span>
+                        <span class="name">Snapchat</span>
+                        <span class="sub">social</span>
+                    </a>
+                    <a class="app" href="https://reddit.com" target="_blank" rel="noopener noreferrer" title="Reddit">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🤖</span>
+                        <span class="name">Reddit</span>
+                        <span class="sub">social</span>
+                    </a>
+                    <a class="app" href="https://pinterest.com" target="_blank" rel="noopener noreferrer" title="Pinterest">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📌</span>
+                        <span class="name">Pinterest</span>
+                        <span class="sub">social</span>
+                    </a>
+                    <a class="app" href="https://tumblr.com" target="_blank" rel="noopener noreferrer" title="Tumblr">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">💬</span>
+                        <span class="name">Tumblr</span>
+                        <span class="sub">social</span>
+                    </a>
+                    <a class="app" href="https://youtube.com" target="_blank" rel="noopener noreferrer" title="YouTube">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">▶️</span>
+                        <span class="name">YouTube</span>
+                        <span class="sub">video</span>
+                    </a>
+                    <a class="app" href="https://netflix.com" target="_blank" rel="noopener noreferrer" title="Netflix">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🎬</span>
+                        <span class="name">Netflix</span>
+                        <span class="sub">video</span>
+                    </a>
+                    <a class="app" href="https://twitch.tv" target="_blank" rel="noopener noreferrer" title="Twitch">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📺</span>
+                        <span class="name">Twitch</span>
+                        <span class="sub">video</span>
+                    </a>
+                    <a class="app" href="https://vimeo.com" target="_blank" rel="noopener noreferrer" title="Vimeo">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🎥</span>
+                        <span class="name">Vimeo</span>
+                        <span class="sub">video</span>
+                    </a>
+                    <a class="app" href="https://spotify.com" target="_blank" rel="noopener noreferrer" title="Spotify">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🎶</span>
+                        <span class="name">Spotify</span>
+                        <span class="sub">audio</span>
+                    </a>
+                    <a class="app" href="https://gmail.com" target="_blank" rel="noopener noreferrer" title="Gmail">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📧</span>
+                        <span class="name">Gmail</span>
+                        <span class="sub">email</span>
+                    </a>
+                    <a class="app" href="https://outlook.com" target="_blank" rel="noopener noreferrer" title="Outlook">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📨</span>
+                        <span class="name">Outlook</span>
+                        <span class="sub">email</span>
+                    </a>
+                    <a class="app" href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">💬</span>
+                        <span class="name">WhatsApp</span>
+                        <span class="sub">chat</span>
+                    </a>
+                    <a class="app" href="https://telegram.org" target="_blank" rel="noopener noreferrer" title="Telegram">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">✈️</span>
+                        <span class="name">Telegram</span>
+                        <span class="sub">chat</span>
+                    </a>
+                    <a class="app" href="https://amazon.com" target="_blank" rel="noopener noreferrer" title="Amazon">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🛒</span>
+                        <span class="name">Amazon</span>
+                        <span class="sub">shop</span>
+                    </a>
+                    <a class="app" href="https://ebay.com" target="_blank" rel="noopener noreferrer" title="eBay">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📦</span>
+                        <span class="name">eBay</span>
+                        <span class="sub">shop</span>
+                    </a>
+                    <a class="app" href="https://flickr.com" target="_blank" rel="noopener noreferrer" title="Flickr">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📷</span>
+                        <span class="name">Flickr</span>
+                        <span class="sub">social</span>
+                    </a>
+                    <a class="app" href="https://quora.com" target="_blank" rel="noopener noreferrer" title="Quora">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">❓</span>
+                        <span class="name">Quora</span>
+                        <span class="sub">social</span>
+                    </a>
+                    <a class="app" href="https://google.com" target="_blank" rel="noopener noreferrer" title="Google">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔍</span>
+                        <span class="name">Google</span>
+                        <span class="sub">search</span>
+                    </a>
+                    <a class="app" href="https://bing.com" target="_blank" rel="noopener noreferrer" title="Bing">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔎</span>
+                        <span class="name">Bing</span>
+                        <span class="sub">search</span>
+                    </a>
+                    <a class="app" href="https://duckduckgo.com" target="_blank" rel="noopener noreferrer" title="DuckDuckGo">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🦆</span>
+                        <span class="name">DuckDuckGo</span>
+                        <span class="sub">search</span>
+                    </a>
+                    <a class="app" href="https://www.wikihow.com/" target="_blank" rel="noopener noreferrer" title="wikiHow">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📖</span>
+                        <span class="name">wikiHow</span>
+                        <span class="sub">reference</span>
+                    </a>
+                    <a class="app" href="https://www.wayfair.com/" target="_blank" rel="noopener noreferrer" title="Wayfair">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🛋️</span>
+                        <span class="name">Wayfair</span>
+                        <span class="sub">shop</span>
+                    </a>
+                    <a class="app" href="https://www.etsy.com/" target="_blank" rel="noopener noreferrer" title="Etsy">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🧵</span>
+                        <span class="name">Etsy</span>
+                        <span class="sub">shop</span>
+                    </a>
                 </div>
             </div>
             <div class="depth-badge">⬆ surface</div>
@@ -839,30 +1104,162 @@
                     <span class="depth-tag">25–50%</span>
                 </div>
                 <div class="apps">
-                    <a class="app" href="https://huggingface.co/" target="_blank" rel="noopener noreferrer" title="Hugging Face"><span class="icon">🤗</span><span class="name">Hugging Face</span><span class="sub">AI</span></a>
-                    <a class="app" href="https://element.io/" target="_blank" rel="noopener noreferrer" title="Matrix Element"><span class="icon">🧩</span><span class="name">Matrix Element</span><span class="sub">chat</span></a>
-                    <a class="app" href="https://safe.global/" target="_blank" rel="noopener noreferrer" title="Safe"><span class="icon">🔒</span><span class="name">Safe</span><span class="sub">privacy</span></a>
-                    <a class="app" href="https://www.jstor.org/" target="_blank" rel="noopener noreferrer" title="JSTOR"><span class="icon">📚</span><span class="name">JSTOR</span><span class="sub">academic</span></a>
-                    <a class="app" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer" title="PubMed"><span class="icon">🧬</span><span class="name">PubMed</span><span class="sub">academic</span></a>
-                    <a class="app" href="https://arxiv.org/" target="_blank" rel="noopener noreferrer" title="arXiv"><span class="icon">📄</span><span class="name">arXiv</span><span class="sub">academic</span></a>
-                    <a class="app" href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer" title="Google Scholar"><span class="icon">🎓</span><span class="name">Google Scholar</span><span class="sub">academic</span></a>
-                    <a class="app" href="https://github.com/" target="_blank" rel="noopener noreferrer" title="GitHub"><span class="icon">🐙</span><span class="name">GitHub</span><span class="sub">dev</span></a>
-                    <a class="app" href="https://gitlab.com/" target="_blank" rel="noopener noreferrer" title="GitLab"><span class="icon">🦊</span><span class="name">GitLab</span><span class="sub">dev</span></a>
-                    <a class="app" href="https://hub.docker.com/" target="_blank" rel="noopener noreferrer" title="Docker Hub"><span class="icon">🐳</span><span class="name">Docker Hub</span><span class="sub">dev</span></a>
-                    <a class="app" href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer" title="AWS Console"><span class="icon">☁️</span><span class="name">AWS Console</span><span class="sub">cloud</span></a>
-                    <a class="app" href="https://azure.microsoft.com/" target="_blank" rel="noopener noreferrer" title="Azure Portal"><span class="icon">☁️</span><span class="name">Azure Portal</span><span class="sub">cloud</span></a>
-                    <a class="app" href="https://cloud.google.com/" target="_blank" rel="noopener noreferrer" title="GCP Console"><span class="icon">☁️</span><span class="name">GCP Console</span><span class="sub">cloud</span></a>
-                    <a class="app" href="https://proton.me/" target="_blank" rel="noopener noreferrer" title="ProtonMail"><span class="icon">🔐</span><span class="name">ProtonMail</span><span class="sub">email</span></a>
-                    <a class="app" href="https://tuta.com/" target="_blank" rel="noopener noreferrer" title="Tutanota"><span class="icon">🔐</span><span class="name">Tutanota</span><span class="sub">email</span></a>
-                    <a class="app" href="https://mega.nz/" target="_blank" rel="noopener noreferrer" title="Mega"><span class="icon">📁</span><span class="name">Mega</span><span class="sub">storage</span></a>
-                    <a class="app" href="https://keybase.io/" target="_blank" rel="noopener noreferrer" title="Keybase"><span class="icon">🔑</span><span class="name">Keybase</span><span class="sub">security</span></a>
-                    <a class="app" href="https://www.torproject.org/" target="_blank" rel="noopener noreferrer" title="Tor Project"><span class="icon">🧅</span><span class="name">Tor Project</span><span class="sub">anon</span></a>
-                    <a class="app" href="https://geti2p.net/" target="_blank" rel="noopener noreferrer" title="I2P"><span class="icon">🌐</span><span class="name">I2P</span><span class="sub">anon</span></a>
-                    <a class="app" href="https://freenetproject.org/" target="_blank" rel="noopener noreferrer" title="Freenet"><span class="icon">🌐</span><span class="name">Freenet</span><span class="sub">anon</span></a>
-                    <a class="app" href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" title="Notion"><span class="icon">📝</span><span class="name">Notion</span><span class="sub">productivity</span></a>
-                    <a class="app" href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" title="Figma"><span class="icon">🎨</span><span class="name">Figma</span><span class="sub">design</span></a>
-                    <a class="app" href="https://stackoverflow.com/" target="_blank" rel="noopener noreferrer" title="Stack Overflow"><span class="icon">📊</span><span class="name">Stack Overflow</span><span class="sub">dev</span></a>
-                    <a class="app" href="https://openai.com/" target="_blank" rel="noopener noreferrer" title="OpenAI"><span class="icon">🤖</span><span class="name">OpenAI</span><span class="sub">AI</span></a>
+                    <a class="app" href="https://huggingface.co/" target="_blank" rel="noopener noreferrer" title="Hugging Face">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🤗</span>
+                        <span class="name">Hugging Face</span>
+                        <span class="sub">AI</span>
+                    </a>
+                    <a class="app" href="https://element.io/" target="_blank" rel="noopener noreferrer" title="Matrix Element">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🧩</span>
+                        <span class="name">Matrix Element</span>
+                        <span class="sub">chat</span>
+                    </a>
+                    <a class="app" href="https://safe.global/" target="_blank" rel="noopener noreferrer" title="Safe">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔒</span>
+                        <span class="name">Safe</span>
+                        <span class="sub">privacy</span>
+                    </a>
+                    <a class="app" href="https://www.jstor.org/" target="_blank" rel="noopener noreferrer" title="JSTOR">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📚</span>
+                        <span class="name">JSTOR</span>
+                        <span class="sub">academic</span>
+                    </a>
+                    <a class="app" href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer" title="PubMed">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🧬</span>
+                        <span class="name">PubMed</span>
+                        <span class="sub">academic</span>
+                    </a>
+                    <a class="app" href="https://arxiv.org/" target="_blank" rel="noopener noreferrer" title="arXiv">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📄</span>
+                        <span class="name">arXiv</span>
+                        <span class="sub">academic</span>
+                    </a>
+                    <a class="app" href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer" title="Google Scholar">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🎓</span>
+                        <span class="name">Google Scholar</span>
+                        <span class="sub">academic</span>
+                    </a>
+                    <a class="app" href="https://github.com/" target="_blank" rel="noopener noreferrer" title="GitHub">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🐙</span>
+                        <span class="name">GitHub</span>
+                        <span class="sub">dev</span>
+                    </a>
+                    <a class="app" href="https://gitlab.com/" target="_blank" rel="noopener noreferrer" title="GitLab">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🦊</span>
+                        <span class="name">GitLab</span>
+                        <span class="sub">dev</span>
+                    </a>
+                    <a class="app" href="https://hub.docker.com/" target="_blank" rel="noopener noreferrer" title="Docker Hub">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🐳</span>
+                        <span class="name">Docker Hub</span>
+                        <span class="sub">dev</span>
+                    </a>
+                    <a class="app" href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer" title="AWS Console">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">☁️</span>
+                        <span class="name">AWS Console</span>
+                        <span class="sub">cloud</span>
+                    </a>
+                    <a class="app" href="https://azure.microsoft.com/" target="_blank" rel="noopener noreferrer" title="Azure Portal">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">☁️</span>
+                        <span class="name">Azure Portal</span>
+                        <span class="sub">cloud</span>
+                    </a>
+                    <a class="app" href="https://cloud.google.com/" target="_blank" rel="noopener noreferrer" title="GCP Console">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">☁️</span>
+                        <span class="name">GCP Console</span>
+                        <span class="sub">cloud</span>
+                    </a>
+                    <a class="app" href="https://proton.me/" target="_blank" rel="noopener noreferrer" title="ProtonMail">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔐</span>
+                        <span class="name">ProtonMail</span>
+                        <span class="sub">email</span>
+                    </a>
+                    <a class="app" href="https://tuta.com/" target="_blank" rel="noopener noreferrer" title="Tutanota">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔐</span>
+                        <span class="name">Tutanota</span>
+                        <span class="sub">email</span>
+                    </a>
+                    <a class="app" href="https://mega.nz/" target="_blank" rel="noopener noreferrer" title="Mega">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📁</span>
+                        <span class="name">Mega</span>
+                        <span class="sub">storage</span>
+                    </a>
+                    <a class="app" href="https://keybase.io/" target="_blank" rel="noopener noreferrer" title="Keybase">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔑</span>
+                        <span class="name">Keybase</span>
+                        <span class="sub">security</span>
+                    </a>
+                    <a class="app" href="https://www.torproject.org/" target="_blank" rel="noopener noreferrer" title="Tor Project">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🧅</span>
+                        <span class="name">Tor Project</span>
+                        <span class="sub">anon</span>
+                    </a>
+                    <a class="app" href="https://geti2p.net/" target="_blank" rel="noopener noreferrer" title="I2P">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🌐</span>
+                        <span class="name">I2P</span>
+                        <span class="sub">anon</span>
+                    </a>
+                    <a class="app" href="https://freenetproject.org/" target="_blank" rel="noopener noreferrer" title="Freenet">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🌐</span>
+                        <span class="name">Freenet</span>
+                        <span class="sub">anon</span>
+                    </a>
+                    <a class="app" href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" title="Notion">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📝</span>
+                        <span class="name">Notion</span>
+                        <span class="sub">productivity</span>
+                    </a>
+                    <a class="app" href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" title="Figma">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🎨</span>
+                        <span class="name">Figma</span>
+                        <span class="sub">design</span>
+                    </a>
+                    <a class="app" href="https://stackoverflow.com/" target="_blank" rel="noopener noreferrer" title="Stack Overflow">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📊</span>
+                        <span class="name">Stack Overflow</span>
+                        <span class="sub">dev</span>
+                    </a>
+                    <a class="app" href="https://openai.com/" target="_blank" rel="noopener noreferrer" title="OpenAI">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🤖</span>
+                        <span class="name">OpenAI</span>
+                        <span class="sub">AI</span>
+                    </a>
+                    <a class="app" href="https://www.data.gov/" target="_blank" rel="noopener noreferrer" title="Data.gov">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📊</span>
+                        <span class="name">Data.gov</span>
+                        <span class="sub">data</span>
+                    </a>
+                    <a class="app" href="https://www.wolframalpha.com/" target="_blank" rel="noopener noreferrer" title="WolframAlpha">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🧮</span>
+                        <span class="name">WolframAlpha</span>
+                        <span class="sub">reference</span>
+                    </a>
                 </div>
             </div>
             <div class="depth-badge">⬇ deeper</div>
@@ -880,29 +1277,150 @@
                     <span class="depth-tag">50–80%</span>
                 </div>
                 <div class="apps">
-                    <a class="app" href="https://potatochat.net/" target="_blank" rel="noopener noreferrer" title="Potato Chat"><span class="icon">🥔</span><span class="name">Potato Chat</span><span class="sub">encrypted</span></a>
-                    <a class="app" href="https://signal.org/" target="_blank" rel="noopener noreferrer" title="Signal"><span class="icon">📱</span><span class="name">Signal</span><span class="sub">secure</span></a>
-                    <a class="app" href="https://getsession.org/" target="_blank" rel="noopener noreferrer" title="Session"><span class="icon">💬</span><span class="name">Session</span><span class="sub">private</span></a>
-                    <a class="app" href="https://wire.com/" target="_blank" rel="noopener noreferrer" title="Wire"><span class="icon">🔗</span><span class="name">Wire</span><span class="sub">secure</span></a>
-                    <a class="app" href="https://threema.ch/" target="_blank" rel="noopener noreferrer" title="Threema"><span class="icon">🔒</span><span class="name">Threema</span><span class="sub">private</span></a>
-                    <a class="app" href="https://wickr.com/" target="_blank" rel="noopener noreferrer" title="Wickr"><span class="icon">🔐</span><span class="name">Wickr</span><span class="sub">secure</span></a>
-                    <a class="app" href="https://tox.chat/" target="_blank" rel="noopener noreferrer" title="Tox"><span class="icon">☣️</span><span class="name">Tox</span><span class="sub">p2p</span></a>
-                    <a class="app" href="https://www.bittorrent.com/" target="_blank" rel="noopener noreferrer" title="BitTorrent"><span class="icon">⚡</span><span class="name">BitTorrent</span><span class="sub">p2p</span></a>
-                    <a class="app" href="https://www.qbittorrent.org/" target="_blank" rel="noopener noreferrer" title="qBittorrent"><span class="icon">🔄</span><span class="name">qBittorrent</span><span class="sub">p2p</span></a>
-                    <a class="app" href="https://www.tribler.org/" target="_blank" rel="noopener noreferrer" title="Tribler"><span class="icon">🌐</span><span class="name">Tribler</span><span class="sub">p2p</span></a>
-                    <a class="app" href="https://www.propublica.org/" target="_blank" rel="noopener noreferrer" title="ProPublica"><span class="icon">📰</span><span class="name">ProPublica</span><span class="sub">onion</span></a>
-                    <a class="app" href="https://www.bbc.com/" target="_blank" rel="noopener noreferrer" title="BBC"><span class="icon">📺</span><span class="name">BBC (Onion)</span><span class="sub">onion</span></a>
-                    <a class="app" href="https://www.cia.gov/" target="_blank" rel="noopener noreferrer" title="CIA"><span class="icon">🕵️</span><span class="name">CIA (Onion)</span><span class="sub">onion</span></a>
-                    <a class="app" href="https://duckduckgo.com/" target="_blank" rel="noopener noreferrer" title="DuckDuckGo"><span class="icon">🦆</span><span class="name">DuckDuckGo (Onion)</span><span class="sub">onion</span></a>
-                    <a class="app" href="https://ahmia.fi/" target="_blank" rel="noopener noreferrer" title="Ahmia"><span class="icon">🔍</span><span class="name">Ahmia</span><span class="sub">onion</span></a>
-                    <a class="app" href="https://securedrop.org/" target="_blank" rel="noopener noreferrer" title="SecureDrop"><span class="icon">📨</span><span class="name">SecureDrop</span><span class="sub">onion</span></a>
-                    <a class="app" href="https://onionshare.org/" target="_blank" rel="noopener noreferrer" title="OnionShare"><span class="icon">🧅</span><span class="name">OnionShare v1</span><span class="sub">share</span></a>
-                    <a class="app" href="https://www.torproject.org/" target="_blank" rel="noopener noreferrer" title="Tor Browser"><span class="icon">🌐</span><span class="name">Tor Browser</span><span class="sub">browser</span></a>
-                    <a class="app" href="https://tails.net/" target="_blank" rel="noopener noreferrer" title="Tails"><span class="icon">🐧</span><span class="name">Tails (site)</span><span class="sub">os</span></a>
-                    <a class="app" href="https://www.whonix.org/" target="_blank" rel="noopener noreferrer" title="Whonix"><span class="icon">🐧</span><span class="name">Whonix (site)</span><span class="sub">os</span></a>
-                    <a class="app" href="https://jami.net/" target="_blank" rel="noopener noreferrer" title="Jami"><span class="icon">📞</span><span class="name">Jami</span><span class="sub">p2p</span></a>
-                    <a class="app" href="https://cwtch.im/" target="_blank" rel="noopener noreferrer" title="Cwtch"><span class="icon">🛡️</span><span class="name">Cwtch</span><span class="sub">private</span></a>
-                    <a class="app" href="https://ricochet.im/" target="_blank" rel="noopener noreferrer" title="Ricochet"><span class="icon">💥</span><span class="name">Ricochet</span><span class="sub">p2p</span></a>
+                    <a class="app" href="https://potatochat.net/" target="_blank" rel="noopener noreferrer" title="Potato Chat">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🥔</span>
+                        <span class="name">Potato Chat</span>
+                        <span class="sub">encrypted</span>
+                    </a>
+                    <a class="app" href="https://signal.org/" target="_blank" rel="noopener noreferrer" title="Signal">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📱</span>
+                        <span class="name">Signal</span>
+                        <span class="sub">secure</span>
+                    </a>
+                    <a class="app" href="https://getsession.org/" target="_blank" rel="noopener noreferrer" title="Session">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">💬</span>
+                        <span class="name">Session</span>
+                        <span class="sub">private</span>
+                    </a>
+                    <a class="app" href="https://wire.com/" target="_blank" rel="noopener noreferrer" title="Wire">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔗</span>
+                        <span class="name">Wire</span>
+                        <span class="sub">secure</span>
+                    </a>
+                    <a class="app" href="https://threema.ch/" target="_blank" rel="noopener noreferrer" title="Threema">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔒</span>
+                        <span class="name">Threema</span>
+                        <span class="sub">private</span>
+                    </a>
+                    <a class="app" href="https://wickr.com/" target="_blank" rel="noopener noreferrer" title="Wickr">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔐</span>
+                        <span class="name">Wickr</span>
+                        <span class="sub">secure</span>
+                    </a>
+                    <a class="app" href="https://tox.chat/" target="_blank" rel="noopener noreferrer" title="Tox">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">☣️</span>
+                        <span class="name">Tox</span>
+                        <span class="sub">p2p</span>
+                    </a>
+                    <a class="app" href="https://www.bittorrent.com/" target="_blank" rel="noopener noreferrer" title="BitTorrent">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">⚡</span>
+                        <span class="name">BitTorrent</span>
+                        <span class="sub">p2p</span>
+                    </a>
+                    <a class="app" href="https://www.qbittorrent.org/" target="_blank" rel="noopener noreferrer" title="qBittorrent">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔄</span>
+                        <span class="name">qBittorrent</span>
+                        <span class="sub">p2p</span>
+                    </a>
+                    <a class="app" href="https://www.tribler.org/" target="_blank" rel="noopener noreferrer" title="Tribler">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🌐</span>
+                        <span class="name">Tribler</span>
+                        <span class="sub">p2p</span>
+                    </a>
+                    <a class="app" href="https://www.propublica.org/" target="_blank" rel="noopener noreferrer" title="ProPublica">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📰</span>
+                        <span class="name">ProPublica</span>
+                        <span class="sub">onion</span>
+                    </a>
+                    <a class="app" href="https://www.bbc.com/" target="_blank" rel="noopener noreferrer" title="BBC">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📺</span>
+                        <span class="name">BBC (Onion)</span>
+                        <span class="sub">onion</span>
+                    </a>
+                    <a class="app" href="https://www.cia.gov/" target="_blank" rel="noopener noreferrer" title="CIA">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🕵️</span>
+                        <span class="name">CIA (Onion)</span>
+                        <span class="sub">onion</span>
+                    </a>
+                    <a class="app" href="https://duckduckgo.com/" target="_blank" rel="noopener noreferrer" title="DuckDuckGo">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🦆</span>
+                        <span class="name">DuckDuckGo (Onion)</span>
+                        <span class="sub">onion</span>
+                    </a>
+                    <a class="app" href="https://ahmia.fi/" target="_blank" rel="noopener noreferrer" title="Ahmia">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔍</span>
+                        <span class="name">Ahmia</span>
+                        <span class="sub">onion</span>
+                    </a>
+                    <a class="app" href="https://securedrop.org/" target="_blank" rel="noopener noreferrer" title="SecureDrop">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📨</span>
+                        <span class="name">SecureDrop</span>
+                        <span class="sub">onion</span>
+                    </a>
+                    <a class="app" href="https://onionshare.org/" target="_blank" rel="noopener noreferrer" title="OnionShare">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🧅</span>
+                        <span class="name">OnionShare v1</span>
+                        <span class="sub">share</span>
+                    </a>
+                    <a class="app" href="https://www.torproject.org/" target="_blank" rel="noopener noreferrer" title="Tor Browser">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🌐</span>
+                        <span class="name">Tor Browser</span>
+                        <span class="sub">browser</span>
+                    </a>
+                    <a class="app" href="https://tails.net/" target="_blank" rel="noopener noreferrer" title="Tails">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🐧</span>
+                        <span class="name">Tails (site)</span>
+                        <span class="sub">os</span>
+                    </a>
+                    <a class="app" href="https://www.whonix.org/" target="_blank" rel="noopener noreferrer" title="Whonix">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🐧</span>
+                        <span class="name">Whonix (site)</span>
+                        <span class="sub">os</span>
+                    </a>
+                    <a class="app" href="https://jami.net/" target="_blank" rel="noopener noreferrer" title="Jami">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📞</span>
+                        <span class="name">Jami</span>
+                        <span class="sub">p2p</span>
+                    </a>
+                    <a class="app" href="https://cwtch.im/" target="_blank" rel="noopener noreferrer" title="Cwtch">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🛡️</span>
+                        <span class="name">Cwtch</span>
+                        <span class="sub">private</span>
+                    </a>
+                    <a class="app" href="https://ricochet.im/" target="_blank" rel="noopener noreferrer" title="Ricochet">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">💥</span>
+                        <span class="name">Ricochet</span>
+                        <span class="sub">p2p</span>
+                    </a>
+                    <a class="app" href="https://www.zeronet.io/" target="_blank" rel="noopener noreferrer" title="ZeroNet">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">⚡</span>
+                        <span class="name">ZeroNet</span>
+                        <span class="sub">p2p</span>
+                    </a>
                 </div>
             </div>
             <div class="depth-badge">⬇ dark</div>
@@ -920,29 +1438,150 @@
                     <span class="depth-tag">80–100%</span>
                 </div>
                 <div class="apps">
-                    <a class="app" href="https://keet.io/" target="_blank" rel="noopener noreferrer" title="Keet IO"><span class="icon">🔑</span><span class="name">Keet IO</span><span class="sub">p2p</span></a>
-                    <a class="app" href="https://onionshare.org/" target="_blank" rel="noopener noreferrer" title="OnionShare"><span class="icon">🧅</span><span class="name">OnionShare v2</span><span class="sub">anon</span></a>
-                    <a class="app" href="https://signal.org/" target="_blank" rel="noopener noreferrer" title="Signal (P2P)"><span class="icon">📱</span><span class="name">Signal (P2P)</span><span class="sub">secure</span></a>
-                    <a class="app" href="https://freenetproject.org/" target="_blank" rel="noopener noreferrer" title="Freenet"><span class="icon">🌐</span><span class="name">Freenet</span><span class="sub">p2p</span></a>
-                    <a class="app" href="https://zeronet.io/" target="_blank" rel="noopener noreferrer" title="ZeroNet"><span class="icon">⚡</span><span class="name">ZeroNet</span><span class="sub">p2p</span></a>
-                    <a class="app" href="https://gnunet.org/" target="_blank" rel="noopener noreferrer" title="GNUnet"><span class="icon">🔗</span><span class="name">GNUnet</span><span class="sub">p2p</span></a>
-                    <a class="app" href="https://geti2p.net/" target="_blank" rel="noopener noreferrer" title="I2P (internal)"><span class="icon">🌐</span><span class="name">I2P (internal)</span><span class="sub">p2p</span></a>
-                    <a class="app" href="https://retroshare.cc/" target="_blank" rel="noopener noreferrer" title="RetroShare"><span class="icon">🔄</span><span class="name">RetroShare</span><span class="sub">p2p</span></a>
-                    <a class="app" href="https://syncthing.net/" target="_blank" rel="noopener noreferrer" title="Syncthing"><span class="icon">🔁</span><span class="name">Syncthing</span><span class="sub">p2p</span></a>
-                    <a class="app" href="https://tails.net/" target="_blank" rel="noopener noreferrer" title="Tails OS"><span class="icon">🐧</span><span class="name">Tails OS</span><span class="sub">os</span></a>
-                    <a class="app" href="https://www.whonix.org/" target="_blank" rel="noopener noreferrer" title="Whonix"><span class="icon">🐧</span><span class="name">Whonix</span><span class="sub">os</span></a>
-                    <a class="app" href="https://www.qubes-os.org/" target="_blank" rel="noopener noreferrer" title="Qubes OS"><span class="icon">🛡️</span><span class="name">Qubes OS</span><span class="sub">os</span></a>
-                    <a class="app" href="https://www.veracrypt.fr/" target="_blank" rel="noopener noreferrer" title="VeraCrypt"><span class="icon">🔐</span><span class="name">VeraCrypt</span><span class="sub">security</span></a>
-                    <a class="app" href="https://www.bleachbit.org/" target="_blank" rel="noopener noreferrer" title="BleachBit"><span class="icon">🧹</span><span class="name">BleachBit</span><span class="sub">security</span></a>
-                    <a class="app" href="https://www.getmonero.org/" target="_blank" rel="noopener noreferrer" title="Monero"><span class="icon">💰</span><span class="name">Monero (XMR)</span><span class="sub">crypto</span></a>
-                    <a class="app" href="https://z.cash/" target="_blank" rel="noopener noreferrer" title="Zcash"><span class="icon">💰</span><span class="name">Zcash</span><span class="sub">crypto</span></a>
-                    <a class="app" href="https://wasabiwallet.io/" target="_blank" rel="noopener noreferrer" title="Wasabi Wallet"><span class="icon">💸</span><span class="name">Wasabi Wallet</span><span class="sub">crypto</span></a>
-                    <a class="app" href="https://samouraiwallet.com/" target="_blank" rel="noopener noreferrer" title="Samourai Wallet"><span class="icon">💸</span><span class="name">Samourai Wallet</span><span class="sub">crypto</span></a>
-                    <a class="app" href="https://magic-wormhole.readthedocs.io/" target="_blank" rel="noopener noreferrer" title="Magic Wormhole"><span class="icon">🐛</span><span class="name">Magic Wormhole</span><span class="sub">share</span></a>
-                    <a class="app" href="https://briarproject.org/" target="_blank" rel="noopener noreferrer" title="Briar"><span class="icon">🌱</span><span class="name">Briar</span><span class="sub">p2p</span></a>
-                    <a class="app" href="https://oxen.io/" target="_blank" rel="noopener noreferrer" title="Lokinet"><span class="icon">🦊</span><span class="name">Lokinet</span><span class="sub">p2p</span></a>
-                    <a class="app" href="https://nymtech.net/" target="_blank" rel="noopener noreferrer" title="Nym"><span class="icon">🌀</span><span class="name">Nym</span><span class="sub">privacy</span></a>
-                    <a class="app" href="https://bisq.network/" target="_blank" rel="noopener noreferrer" title="Bisq"><span class="icon">⚖️</span><span class="name">Bisq</span><span class="sub">crypto</span></a>
+                    <a class="app" href="https://keet.io/" target="_blank" rel="noopener noreferrer" title="Keet IO">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔑</span>
+                        <span class="name">Keet IO</span>
+                        <span class="sub">p2p</span>
+                    </a>
+                    <a class="app" href="https://onionshare.org/" target="_blank" rel="noopener noreferrer" title="OnionShare">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🧅</span>
+                        <span class="name">OnionShare v2</span>
+                        <span class="sub">anon</span>
+                    </a>
+                    <a class="app" href="https://signal.org/" target="_blank" rel="noopener noreferrer" title="Signal (P2P)">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">📱</span>
+                        <span class="name">Signal (P2P)</span>
+                        <span class="sub">secure</span>
+                    </a>
+                    <a class="app" href="https://freenetproject.org/" target="_blank" rel="noopener noreferrer" title="Freenet">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🌐</span>
+                        <span class="name">Freenet</span>
+                        <span class="sub">p2p</span>
+                    </a>
+                    <a class="app" href="https://zeronet.io/" target="_blank" rel="noopener noreferrer" title="ZeroNet">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">⚡</span>
+                        <span class="name">ZeroNet</span>
+                        <span class="sub">p2p</span>
+                    </a>
+                    <a class="app" href="https://gnunet.org/" target="_blank" rel="noopener noreferrer" title="GNUnet">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔗</span>
+                        <span class="name">GNUnet</span>
+                        <span class="sub">p2p</span>
+                    </a>
+                    <a class="app" href="https://geti2p.net/" target="_blank" rel="noopener noreferrer" title="I2P (internal)">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🌐</span>
+                        <span class="name">I2P (internal)</span>
+                        <span class="sub">p2p</span>
+                    </a>
+                    <a class="app" href="https://retroshare.cc/" target="_blank" rel="noopener noreferrer" title="RetroShare">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔄</span>
+                        <span class="name">RetroShare</span>
+                        <span class="sub">p2p</span>
+                    </a>
+                    <a class="app" href="https://syncthing.net/" target="_blank" rel="noopener noreferrer" title="Syncthing">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔁</span>
+                        <span class="name">Syncthing</span>
+                        <span class="sub">p2p</span>
+                    </a>
+                    <a class="app" href="https://tails.net/" target="_blank" rel="noopener noreferrer" title="Tails OS">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🐧</span>
+                        <span class="name">Tails OS</span>
+                        <span class="sub">os</span>
+                    </a>
+                    <a class="app" href="https://www.whonix.org/" target="_blank" rel="noopener noreferrer" title="Whonix">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🐧</span>
+                        <span class="name">Whonix</span>
+                        <span class="sub">os</span>
+                    </a>
+                    <a class="app" href="https://www.qubes-os.org/" target="_blank" rel="noopener noreferrer" title="Qubes OS">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🛡️</span>
+                        <span class="name">Qubes OS</span>
+                        <span class="sub">os</span>
+                    </a>
+                    <a class="app" href="https://www.veracrypt.fr/" target="_blank" rel="noopener noreferrer" title="VeraCrypt">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔐</span>
+                        <span class="name">VeraCrypt</span>
+                        <span class="sub">security</span>
+                    </a>
+                    <a class="app" href="https://www.bleachbit.org/" target="_blank" rel="noopener noreferrer" title="BleachBit">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🧹</span>
+                        <span class="name">BleachBit</span>
+                        <span class="sub">security</span>
+                    </a>
+                    <a class="app" href="https://www.getmonero.org/" target="_blank" rel="noopener noreferrer" title="Monero">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">💰</span>
+                        <span class="name">Monero (XMR)</span>
+                        <span class="sub">crypto</span>
+                    </a>
+                    <a class="app" href="https://z.cash/" target="_blank" rel="noopener noreferrer" title="Zcash">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">💰</span>
+                        <span class="name">Zcash</span>
+                        <span class="sub">crypto</span>
+                    </a>
+                    <a class="app" href="https://wasabiwallet.io/" target="_blank" rel="noopener noreferrer" title="Wasabi Wallet">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">💸</span>
+                        <span class="name">Wasabi Wallet</span>
+                        <span class="sub">crypto</span>
+                    </a>
+                    <a class="app" href="https://samouraiwallet.com/" target="_blank" rel="noopener noreferrer" title="Samourai Wallet">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">💸</span>
+                        <span class="name">Samourai Wallet</span>
+                        <span class="sub">crypto</span>
+                    </a>
+                    <a class="app" href="https://magic-wormhole.readthedocs.io/" target="_blank" rel="noopener noreferrer" title="Magic Wormhole">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🐛</span>
+                        <span class="name">Magic Wormhole</span>
+                        <span class="sub">share</span>
+                    </a>
+                    <a class="app" href="https://briarproject.org/" target="_blank" rel="noopener noreferrer" title="Briar">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🌱</span>
+                        <span class="name">Briar</span>
+                        <span class="sub">p2p</span>
+                    </a>
+                    <a class="app" href="https://oxen.io/" target="_blank" rel="noopener noreferrer" title="Lokinet">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🦊</span>
+                        <span class="name">Lokinet</span>
+                        <span class="sub">p2p</span>
+                    </a>
+                    <a class="app" href="https://nymtech.net/" target="_blank" rel="noopener noreferrer" title="Nym">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🌀</span>
+                        <span class="name">Nym</span>
+                        <span class="sub">privacy</span>
+                    </a>
+                    <a class="app" href="https://bisq.network/" target="_blank" rel="noopener noreferrer" title="Bisq">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">⚖️</span>
+                        <span class="name">Bisq</span>
+                        <span class="sub">crypto</span>
+                    </a>
+                    <a class="app" href="https://www.openpgp.org/" target="_blank" rel="noopener noreferrer" title="OpenPGP">
+                        <span class="link-icon">↗</span>
+                        <span class="icon">🔑</span>
+                        <span class="name">OpenPGP</span>
+                        <span class="sub">security</span>
+                    </a>
                 </div>
             </div>
             <div class="depth-badge">⬇ abyss</div>
